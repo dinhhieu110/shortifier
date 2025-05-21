@@ -1,12 +1,12 @@
 export interface IUser {
-  email: string;
+  email?: string;
   name?: string;
-  password: string;
+  password?: string;
   profile_pic?: any;
 }
 
 export interface IUrl {
-  id: string;
+  id?: string;
   original_url?: string;
   short_url?: string;
   custom_url?: string;
@@ -16,9 +16,9 @@ export interface IUrl {
 }
 
 export interface IClick {
-  id: string;
-  urlId: string;
+  id?: string;
+  urlId?: string;
   city?: string;
   device?: string;
-  country: string;
+  country?: string;
 }
