@@ -10,9 +10,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { LinkIcon, LogOut, UserIcon } from "lucide-react";
+import { UrlState } from "@/context";
 const Header = () => {
   const navigate = useNavigate();
-  const isAuthenticated = true;
+  const { isAuthenticated, fetchCurrentUser, user } = UrlState();
   return (
     <nav className="p-4 flex justify-between items-center">
       <Link
@@ -22,16 +23,19 @@ const Header = () => {
         Shortifier
       </Link>
       <div>
-        {isAuthenticated ? (
+        {user ? (
           <DropdownMenu>
             <DropdownMenuTrigger className="w-8 rounded-full overflow-hidden">
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage
+                  src={user?.user_metadata?.profile_pic}
+                  className="object-contain"
+                />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>{user?.user_metadata?.name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <UserIcon className="h-4 w-4" />
@@ -43,7 +47,7 @@ const Header = () => {
               </DropdownMenuItem>
               <DropdownMenuItem className="text-red-400">
                 <LogOut className="h-4 w-4" />
-                Sign out
+                <span>Sign out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
