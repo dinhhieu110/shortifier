@@ -35,3 +35,15 @@ export const storeClicks = async ({ id, originalUrl }) => {
     console.error("Error recording click: ", error);
   }
 };
+
+export async function getClicksPerUrl(shortUrlId) {
+  const { data, error } = await supabase
+    .from("clicks")
+    .select("*")
+    .eq("url_id", shortUrlId);
+  if (error) {
+    console.log(error.message);
+    throw new Error("Unable to fetch clicks per url");
+  }
+  return data;
+}

@@ -54,7 +54,6 @@ export async function createUrl(
 }
 
 export async function getOriginalUrl(shortUrlId) {
-  console.log("shortUrlId:", shortUrlId);
   const { data, error } = await supabase
     .from("urls")
     .select("id, original_url")
@@ -63,6 +62,20 @@ export async function getOriginalUrl(shortUrlId) {
   if (error) {
     console.log(error.message);
     throw new Error("Unable to fetch original url");
+  }
+  return data;
+}
+
+export async function getShortUrl({ id, user_id }) {
+  const { data, error } = await supabase
+    .from("urls")
+    .select("*")
+    .eq("id", id)
+    .eq("user_id", user_id)
+    .single();
+  if (error) {
+    console.log(error.message);
+    throw new Error("Unable to fetch short url");
   }
   return data;
 }
