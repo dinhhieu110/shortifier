@@ -1,4 +1,4 @@
-import { HowItWork } from "@/components/custom";
+import { HowItWork } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
