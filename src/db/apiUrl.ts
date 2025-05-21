@@ -1,5 +1,5 @@
 import supabase, { supabaseUrl } from "./supabase";
-
+import { UAParser } from "ua-parser-js";
 export async function getUrls(user_id) {
   const { data, error } = await supabase
     .from("urls")
@@ -49,6 +49,20 @@ export async function createUrl(
   if (error) {
     console.log(error.message);
     throw new Error("Unable to create new url");
+  }
+  return data;
+}
+
+export async function getOriginalUrl(shortUrlId) {
+  console.log("shortUrlId:", shortUrlId);
+  const { data, error } = await supabase
+    .from("urls")
+    .select("id, original_url")
+    .or(`short_url.eq.${shortUrlId.id}, custom_url.eq.${shortUrlId.id}`)
+    .single();
+  if (error) {
+    console.log(error.message);
+    throw new Error("Unable to fetch original url");
   }
   return data;
 }

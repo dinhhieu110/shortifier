@@ -48,7 +48,8 @@ const LinkCard: FC<ILinkCardProps> = ({ url, fetchUrls }) => {
           {url?.title}
         </span>
         <span className="text-2xl font-bold hover:underline cursor-pointer text-blue-400">
-          https://trimrr.in/{url?.custom_url ? url?.custom_url : url?.short_url}
+          http://localhost:5173/
+          {url?.short_url ? url?.short_url : url?.custom_url}
         </span>
         <span className=" hover:underline cursor-pointer ">
           {url?.original_url}
