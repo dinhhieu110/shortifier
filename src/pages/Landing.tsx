@@ -16,7 +16,7 @@ const Landing = () => {
   return (
     <div className="flex flex-col items-center">
       <h2 className="my-10 sm:my-16 text-3xl sm:text-6xl lg:text-7xl text-[#555] text-center font-extrabold">
-        The only URL Shortener <br /> you&rsquo;ll ever need! 👇
+        Paste the URL to be shortened 👇
       </h2>
       <form
         onSubmit={handleShorten}
@@ -36,7 +36,7 @@ const Landing = () => {
           Shorten
         </Button>
       </form>
-      <img src="/banner.jpeg" alt="banner" className="w-full my-11 md:px-11" />
+      {/* <img src="/banner.jpeg" alt="banner" className="w-full my-11 md:px-11" /> */}
       <HowItWork />
     </div>
   );
