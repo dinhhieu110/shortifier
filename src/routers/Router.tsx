@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Auth, DashBoard, Landing, RedirectURL, URL } from "@/pages";
 import AppLayout from "@/layout/AppLayout";
+import { RequiredAuth } from "@/components";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <DashBoard />,
+        element: (
+          <RequiredAuth>
+            <DashBoard />
+          </RequiredAuth>
+        ),
       },
       {
         path: "/auth",
@@ -20,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/link/:id",
-        element: <URL />,
+        element: (
+          <RequiredAuth>
+            <URL />
+          </RequiredAuth>
+        ),
       },
       {
         path: "/:id",
