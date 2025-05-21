@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-const useFetch = (callback, options = {}) => {
+const useFetch = (cb, option = {}) => {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const fn = async (...args) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await callback(options, ...args);
-      setData(response);
+      const res = await cb(option, ...args);
+      setData(res);
       setError(null);
     } catch (e) {
       setError(e);
