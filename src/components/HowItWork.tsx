@@ -6,29 +6,39 @@ import {
 } from "@/components/ui/accordion";
 const HowItWork = () => {
   return (
-    <Accordion type="multiple" className="w-full md:px-11">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>How does the Shortifier works!</AccordionTrigger>
+    <Accordion type="multiple" className="w-full md:px-11 mt-24">
+      <AccordionItem value="step-1">
+        <AccordionTrigger>Step 1: Enter Your Long URL</AccordionTrigger>
         <AccordionContent>
-          When you enter a long URL, our system generates a shorter version of
-          that URL. This shortened URL redirects to the original long URL when
-          accessed.
+          Paste the full, original URL you want to shorten into the input field
+          on the homepage.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>How does the Shortifier works!</AccordionTrigger>
+
+      <AccordionItem value="step-2">
+        <AccordionTrigger>Step 2: Click the "Shorten" Button</AccordionTrigger>
         <AccordionContent>
-          When you enter a long URL, our system generates a shorter version of
-          that URL. This shortened URL redirects to the original long URL when
-          accessed.
+          After pasting the URL, click the "Shorten" button. Our system will
+          generate a unique, shortened version of your link.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>How does the Shortifier works!</AccordionTrigger>
+
+      <AccordionItem value="step-3">
+        <AccordionTrigger>
+          Step 3: Copy and Share the Short Link
+        </AccordionTrigger>
         <AccordionContent>
-          When you enter a long URL, our system generates a shorter version of
-          that URL. This shortened URL redirects to the original long URL when
-          accessed.
+          The newly created short link will appear below the input. Click to
+          copy it and share it wherever you like — in emails, social media, or
+          messages.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="step-4">
+        <AccordionTrigger>Step 4: Track (Optional)</AccordionTrigger>
+        <AccordionContent>
+          If your app supports it, you can track how many people clicked your
+          short link through analytics features.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
