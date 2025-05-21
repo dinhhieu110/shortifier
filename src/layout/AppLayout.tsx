@@ -1,4 +1,4 @@
-import { Header } from "@/components/custom";
+import { Footer, Header } from "@/components/custom";
 import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
@@ -11,9 +11,7 @@ const AppLayout = () => {
         <Outlet />
       </main>
       {/* Footer */}
-      <div className="p-10 text-center bg-gray-800 mt-10">
-        Tran Dinh Hieu @Wilson_Tran
-      </div>
+      <Footer />
     </div>
   );
 };

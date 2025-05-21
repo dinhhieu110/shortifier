@@ -15,8 +15,11 @@ const Header = () => {
   const isAuthenticated = true;
   return (
     <nav className="p-4 flex justify-between items-center">
-      <Link to="/">
-        <img src="./logo.png" alt="Shorten url logo" className="h-16" />
+      <Link
+        to="/"
+        className="font-extrabold text-[#0186da] text-shadow-md text-4xl"
+      >
+        Short URL
       </Link>
       <div>
         {isAuthenticated ? (
