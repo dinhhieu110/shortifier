@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import { Filter } from "lucide-react";
-import { Error, LinkCard } from "@/components";
+import { CreateLink, Error, LinkCard } from "@/components";
 import useFetch from "@/hooks/useFetch";
 import { getUrls } from "@/db/apiUrl";
 import { UrlState } from "@/context";
@@ -67,9 +67,7 @@ const DashBoard = () => {
       </div>
       <div className="flex justify-between">
         <h1 className="text-4xl font-extrabold text-[#555]">My Links</h1>
-        <Button className="h-full bg-[#0186da] hover:bg-[#0186da] cursor-pointer">
-          Create Link
-        </Button>
+        <CreateLink />
       </div>
       <div className="relative">
         <Input
