@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-[#0186da] text-shadow-md  text-xl font-semibold ">
               URL Shortifier
             </h2>
             <p className="mt-2 text-sm text-gray-500">
-              Empowering careers. Connecting talents with top companies.
+  Simplify your links. Share smarter, track better.
             </p>
           </div>
 
@@ -22,23 +22,23 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/jobs" className="hover:text-blue-600">
-                  Browse Jobs
+                <a href="/" className="hover:text-blue-600">
+                Landing
                 </a>
               </li>
               <li>
-                <a href="/companies" className="hover:text-blue-600">
-                  Companies
+                <a href="/auth" className="hover:text-blue-600">
+                Auth
                 </a>
               </li>
               <li>
-                <a href="/apply" className="hover:text-blue-600">
-                  Apply Now
+                <a href="/link/:id" className="hover:text-blue-600">
+                URL
                 </a>
               </li>
               <li>
-                <a href="/post-job" className="hover:text-blue-600">
-                  Post a Job
+                <a href="/:id" className="hover:text-blue-600">
+                RedirectURL
                 </a>
               </li>
             </ul>

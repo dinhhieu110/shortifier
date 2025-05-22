@@ -16,7 +16,7 @@ import { signOut } from "@/db/apiAuth";
 import { BarLoader } from "react-spinners";
 const Header = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, fetchCurrentUser, user } = UrlState();
+  const { fetchCurrentUser, user } = UrlState();
   const { loading, fn: fnSignOut } = useFetch(signOut);
 
   return (
