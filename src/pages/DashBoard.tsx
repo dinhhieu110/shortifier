@@ -22,12 +22,11 @@ const DashBoard = () => {
   } = useFetch(getUrls, user.id);
   const {
     loading: loadingClicks,
-    error: errorClicks,
     data: clicks = [],
     fn: fnFetchClicks,
   } = useFetch(
     getClicksForUrls,
-    urls?.map((url: IUrl) => url.id)
+    urls?.map((url: IUrl) => url?.id)
   );
 
   useEffect(() => {

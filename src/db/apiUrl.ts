@@ -1,6 +1,6 @@
+import type { IUrl } from "@/types";
 import supabase, { supabaseUrl } from "./supabase";
-import { UAParser } from "ua-parser-js";
-export async function getUrls(user_id) {
+export async function getUrls(user_id: string) {
   const { data, error } = await supabase
     .from("urls")
     .select("*")
@@ -12,7 +12,7 @@ export async function getUrls(user_id) {
   return data;
 }
 
-export async function deleteUrl(id) {
+export async function deleteUrl(id: string) {
   const { data, error } = await supabase.from("urls").delete().eq("id", id);
   if (error) {
     console.log(error.message);
@@ -22,8 +22,8 @@ export async function deleteUrl(id) {
 }
 
 export async function createUrl(
-  { title, original_url, custom_url, user_id },
-  qrCode
+  { title, original_url, custom_url, user_id }: IUrl,
+  qrCode: Blob
 ) {
   const shortUrl = Math.random().toString(36).substring(2, 6);
   const fileName = `qr-${shortUrl}`;
@@ -53,7 +53,7 @@ export async function createUrl(
   return data;
 }
 
-export async function getOriginalUrl(shortUrlId) {
+export async function getOriginalUrl(shortUrlId: { id: string }) {
   const { data, error } = await supabase
     .from("urls")
     .select("id, original_url")
@@ -66,7 +66,13 @@ export async function getOriginalUrl(shortUrlId) {
   return data;
 }
 
-export async function getShortUrl({ id, user_id }) {
+export async function getShortUrl({
+  id,
+  user_id,
+}: {
+  id: string;
+  user_id: string;
+}) {
   const { data, error } = await supabase
     .from("urls")
     .select("*")

@@ -1,4 +1,5 @@
 export interface IUser {
+  id?: string;
   email?: string;
   name?: string;
   password?: string;
@@ -13,6 +14,7 @@ export interface IUrl {
   title?: string;
   qr?: string;
   created_at?: any;
+  user_id?: string;
 }
 
 export interface IClick {

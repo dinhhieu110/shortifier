@@ -1,7 +1,7 @@
 import { UAParser } from "ua-parser-js";
 import supabase from "./supabase";
 
-export async function getClicksForUrls(urlIds) {
+export async function getClicksForUrls(urlIds: string[]) {
   const { data, error } = await supabase
     .from("clicks")
     .select("*")
@@ -36,7 +36,7 @@ export const storeClicks = async ({ id, originalUrl }) => {
   }
 };
 
-export async function getClicksPerUrl(shortUrlId) {
+export async function getClicksPerUrl(shortUrlId: string) {
   const { data, error } = await supabase
     .from("clicks")
     .select("*")

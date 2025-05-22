@@ -31,12 +31,11 @@ const Landing = () => {
         />
         <Button
           type="submit"
-          className="h-full bg-[#0186da] hover:bg-[#0186da]  cursor-pointer"
+          className="h-full bg-[#0186da] hover:bg-[#0186da] cursor-pointer"
         >
           Shorten
         </Button>
       </form>
-      {/* <img src="/banner.jpeg" alt="banner" className="w-full my-11 md:px-11" /> */}
       <HowItWork />
     </div>
   );

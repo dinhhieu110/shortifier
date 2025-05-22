@@ -20,8 +20,8 @@ export async function getCurrentUser() {
   return data.session?.user;
 }
 
-export async function signUp({ name, email, password, profile_pic }) {
-  const fileName = `dp-${name.split(" ").join("-")}-${Math.random()}`;
+export async function signUp({ name, email, password, profile_pic }: IUser) {
+  const fileName = `dp-${name?.split(" ").join("-")}-${Math.random()}`;
   const { error: storageErr } = await supabase.storage
     .from("profile-pic")
     .upload(fileName, profile_pic);
