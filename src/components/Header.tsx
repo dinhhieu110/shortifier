@@ -21,12 +21,13 @@ const Header = () => {
 
   return (
     <>
-      <nav className="p-4 flex justify-between items-center">
+      <nav className="py-4 flex justify-between items-center px-4 sm:px-8 lg:px-12 xl:px-16 border-b">
         <Link
           to="/"
-          className="font-extrabold text-[#0186da] text-shadow-md text-4xl"
+          className="font-extrabold text-[#0186da] text-shadow-md text-4xl flex items-center gap-2"
         >
-          Shortifier
+          <img src="/logo.png" alt="logo image" className="h-10"/>
+          URL Shortifier
         </Link>
         <div>
           {user ? (
