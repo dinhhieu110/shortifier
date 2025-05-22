@@ -26,9 +26,10 @@ Shortifier is a lightweight web application that allows users to shorten long UR
 👨‍💻 Author Tran Dinh Hieu (Wilson Tran) – A full-stack web developer passionate about building real-world applications using modern technologies.
 
 🚀 Preview
-![image](https://github.com/user-attachments/assets/fe905dd7-3de5-49eb-9822-7d4a4a1d884d)
 
-![image](https://github.com/user-attachments/assets/ee8fb718-63c5-4182-bec8-6e91a060c53e)
+![image](https://github.com/user-attachments/assets/4ffc0ba8-07ce-4fd4-999c-52049f65fc5d)
 
-![image](https://github.com/user-attachments/assets/c20d69a0-9e2d-412b-80c7-80c50c868c5f)
+![image](https://github.com/user-attachments/assets/1f7abcf3-5ffc-47ec-b903-2af09bbfc5c2)
 
+
+![image](https://github.com/user-attachments/assets/8952cea6-662b-4e47-b207-f27378b8c3dc)
